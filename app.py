@@ -83,10 +83,10 @@ def main():
         sns.boxplot(data=hr_data, x='PerformanceScore', y='EngagementSurvey', ax=ax2)
         st.pyplot(fig2)
 
-        # Relationship between special projects count and performance score
-        st.subheader("Special Projects Count vs. Performance Score")
+        # Relationship between special projects count and performance score 
+        st.subheader("Average Special Projects Count vs. Performance Score")
         fig3, ax3 = plt.subplots(figsize=(10, 6))
-        sns.boxplot(data=hr_data, x='PerformanceScore', y='SpecialProjectsCount', ax=ax3)
+        sns.barplot(data=hr_data, x='PerformanceScore', y='SpecialProjectsCount', ax=ax3, ci=None)
         st.pyplot(fig3)
 
     elif page == "Managerial Analysis":
@@ -118,12 +118,6 @@ def main():
         fig1, ax1 = plt.subplots(figsize=(10, 6))
         sns.histplot(hr_data['DaysLateLast30'], kde=True, ax=ax1)
         st.pyplot(fig1)
-
-        # Relationship between lateness and performance scores
-        st.subheader("Lateness vs. Performance Score")
-        fig2, ax2 = plt.subplots(figsize=(10, 6))
-        sns.boxplot(data=hr_data, x='PerformanceScore', y='DaysLateLast30', ax=ax2)
-        st.pyplot(fig2)
 
 
     # ... You can continue this structure for Performance Analysis, Managerial Analysis, and Attendance Analysis
